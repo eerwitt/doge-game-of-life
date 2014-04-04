@@ -1,8 +1,8 @@
 /* 
-  Conway's Game of Life implementation in DogeScript.
-  Author: Erik Erwitt (e3) <erike@cpan.org>
-  Original Author: Martin Foot <https://github.com/mfoo/CoffeeScript-Game-Of-Life>
-  License: Do what you want.
+  # Conway's Game of Life implementation in DogeScript.
+  # Author: Erik Erwitt (e3) <erike@cpan.org>
+  # Original Author: Martin Foot <https://github.com/mfoo/CoffeeScript-Game-Of-Life>
+  # License: Do what you want.
 */ 
 
 var canvas = $('#conway')[0];
@@ -44,9 +44,10 @@ function render () {
 var canvasExist = canvas.getContext;
 if (canvasExist ) {
 var ctx = canvas.getContext('2d');
-ctx.fillStyle = "white"; 
+ctx.clearRect(0, 0, canvas.width, canvas.height);
+ctx.fillStyle = "rgba(255,255,255,0.1)"; 
 ctx.fillRect(0, 0, canvas.width, canvas.height);
-ctx.fillStyle = "orange"; 
+ctx.fillStyle = "rgba(255,245,238,0.7)"; 
 
 for ( var i  = 0 ; i  < numEntities ; i  += 1 ) {
 var x = i%entitiesX;
@@ -60,9 +61,11 @@ ctx.fillRect(entitySize*x, entitySize*y, entitySize, entitySize);
 $("#iterationNumber").text(iterationCount);
 } 
 
-// A single iteration of Conway's Game of Life. Do not modify the current board 
-// (entities). Any changes go into the buffer (newEntities), which is then 
-// swapped at the end of the function. 
+/* 
+  # A single iteration of Conway's Game of Life. Do not modify the current board
+  # (entities). Any changes go into the buffer (newEntities), which is then
+  # swapped at the end of the function.
+*/ 
 function step () { 
 for ( var i  = 0 ; i  < numEntities-1 ; i  += 1 ) {
 // Get the number of live neighbours from the previous turn. 

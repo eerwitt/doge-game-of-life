@@ -44,9 +44,10 @@ such render
   very canvasExist is canvas.getContext
   rly canvasExist
     very ctx is canvas dose getContext with '2d'
-    ctx.fillStyle is "white";
+    plz ctx.clearRect with 0 0 canvas.width canvas.height
+    ctx.fillStyle is "rgba(255,255,255,0.1)";
     plz ctx.fillRect with 0 0 canvas.width canvas.height
-    ctx.fillStyle is "orange";
+    ctx.fillStyle is "rgba(255,245,238,0.7)";
 
     much very i as 0 next i smaller numEntities next i more 1
       very x is i%entitiesX
