@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Conway's Game of Life -- DodgeScript</title>
+    </head>
+    <body>
+        <canvas id="conway" width="800" height="480" style="border: 1px solid black;"></canvas>
+        <p>
+            Iteration: <span id="iterationNumber">0<span>
+        </p>
+        <p>
+            <button id="play">Play</button>
+            <button id="stepper">Step</button>
+            <button id="pause">Pause</button>
+            <button id="randomise">Randomise</button>
+        </p>
+        <p>
+            Click a cell on the map to manually toggle it.
+        </p>
+
+        <pre id="dogeScript"></pre>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script src="conway.js"></script>
+    </body>
+</html>
