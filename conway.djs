@@ -39,6 +39,16 @@ such initialize
   wow
 wow
 
+such color
+  very colors is []
+  plz colors.push with "rgba(49, 247, 10, 0.4)" "rgba(255,245,238,0.7)" "rgba(251, 108, 108, 0.4)" "rgba(255, 3, 69, 0.4)" "rgba(224, 23, 182, 0.4)"
+  very pick is Math.floor(Math.random() * (5))
+wow colors[pick]
+
+very easter is new Audio
+plz easter.setAttribute with 'src', 'http://soundbible.com/mp3/Dog%20Woof-SoundBible.com-457935112.mp3'
+plz easter.load 
+
 shh Render the board
 such render
   very canvasExist is canvas.getContext
@@ -47,13 +57,13 @@ such render
     plz ctx.clearRect with 0 0 canvas.width canvas.height
     ctx.fillStyle is "rgba(255,255,255,0.1)";
     plz ctx.fillRect with 0 0 canvas.width canvas.height
-    ctx.fillStyle is "rgba(255,245,238,0.7)";
 
     much very i as 0 next i smaller numEntities next i more 1
       very x is i%entitiesX
       very y is plz Math.floor with i/entitiesX
       rly entities[i] is 1
         plz ctx.fillRect with entitySize*x entitySize*y entitySize entitySize
+        ctx.fillStyle is plz color
       wow
     wow
   wow
@@ -167,9 +177,14 @@ such randomEyes
   plz render
 wow
 
+such egg
+  plz easter.play
+wow
+
 plz $('#play').click with playClick
 plz $("#pause").click with pauseClick
 plz $("#stepper").click with tick
 plz $("#conway").click with conwayClick
 plz $("#randomise").click with randomEyes
+plz $("#conway").click with egg
 plz playClick
