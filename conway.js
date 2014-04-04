@@ -39,6 +39,17 @@ iterationCount = 0;
 } 
 } 
 
+function color () { 
+var colors = [];
+colors.push("rgba(49, 247, 10, 0.4)", "rgba(255,245,238,0.7)", "rgba(251, 108, 108, 0.4)", "rgba(255, 3, 69, 0.4)", "rgba(224, 23, 182, 0.4)");
+var pick = Math.floor(Math.random() * (5)) ;
+return colors[pick];
+} 
+
+var easter = new Audio();
+easter.setAttribute('src', 'http://soundbible.com/mp3/Dog%20Woof-SoundBible.com-457935112.mp3');
+easter.load();
+
 // Render the board 
 function render () { 
 var canvasExist = canvas.getContext;
@@ -47,13 +58,13 @@ var ctx = canvas.getContext('2d');
 ctx.clearRect(0, 0, canvas.width, canvas.height);
 ctx.fillStyle = "rgba(255,255,255,0.1)"; 
 ctx.fillRect(0, 0, canvas.width, canvas.height);
-ctx.fillStyle = "rgba(255,245,238,0.7)"; 
 
 for ( var i  = 0 ; i  < numEntities ; i  += 1 ) {
 var x = i%entitiesX;
 var y = Math.floor(i/entitiesX);
 if (entities[i]  === 1 ) {
 ctx.fillRect(entitySize*x, entitySize*y, entitySize, entitySize);
+ctx.fillStyle = color();
 } 
 } 
 } 
@@ -167,10 +178,15 @@ initialize();
 render();
 } 
 
+function egg () { 
+easter.play();
+} 
+
 $('#play').click(playClick);
 $("#pause").click(pauseClick);
 $("#stepper").click(tick);
 $("#conway").click(conwayClick);
 $("#randomise").click(randomEyes);
+$("#conway").click(egg);
 playClick();
 
