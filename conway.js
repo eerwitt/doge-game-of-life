@@ -172,4 +172,5 @@ $("#pause").click(pauseClick);
 $("#stepper").click(tick);
 $("#conway").click(conwayClick);
 $("#randomise").click(randomEyes);
+playClick();
 

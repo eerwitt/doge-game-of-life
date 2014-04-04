@@ -172,3 +172,4 @@ plz $("#pause").click with pauseClick
 plz $("#stepper").click with tick
 plz $("#conway").click with conwayClick
 plz $("#randomise").click with randomEyes
+plz playClick
